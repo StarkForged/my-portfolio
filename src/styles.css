@@ -1,0 +1,471 @@
+/* ============================================================
+   PORTFOLIO — styles.css
+   Import order in main.jsx:
+     1. bootstrap/dist/css/bootstrap.min.css
+     2. ./styles.css   (this file)
+   ============================================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700&family=Black+Han+Sans&display=swap');
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d0d0d;
+  color: #d4cfc7;
+  font-family: 'Barlow', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   PERSONAL SECTION
+   ============================================================ */
+.personal {
+  background: linear-gradient(135deg, #e84118 0%, #c0392b 50%, #e84118 100%);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Navbar */
+.personal__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5%;
+}
+
+.personal__logo {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 2rem;
+  color: #111;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-decoration: none;
+}
+
+.personal__nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.personal__connect-btn {
+  border: 1.5px solid #111;
+  border-radius: 50px;
+  padding: 8px 22px;
+  color: #111;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.personal__connect-btn:hover {
+  background: #111;
+  color: #e84118;
+}
+
+.personal__menu-icon {
+  font-size: 1.5rem;
+  color: #111;
+  cursor: pointer;
+}
+
+/* Center name block */
+.personal__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.personal__subtitle {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  letter-spacing: 6px;
+  color: #111;
+  opacity: 0.8;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.personal__name {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 900;
+  color: #111;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  margin: 0;
+}
+
+/* Bottom bar */
+.personal__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 5% 32px;
+}
+
+.personal__bottom span {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #111;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+.section-label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 48px;
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about {
+  background: #0d0d0d;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 5%;
+}
+
+.about__heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: #d4cfc7;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.about__heading span {
+  color: #e84118;
+}
+
+.about__bio {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.05rem;
+  color: #888;
+  margin-top: 32px;
+  max-width: 650px;
+  line-height: 1.8;
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.about__link {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #e84118;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid #e84118;
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.about__link:hover {
+  opacity: 0.7;
+}
+
+/* ============================================================
+   SKILLS SECTION
+   ============================================================ */
+.skills {
+  background: #0a0a0a;
+  padding: 80px 5%;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: default;
+  transition: transform 0.2s, border-color 0.2s;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232, 65, 24, 0.5);
+}
+
+.skill-card__label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: #888;
+  margin: 0;
+  font-weight: 600;
+}
+
+.skill-card__title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.skill-card__desc {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.skill-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.skill-tag {
+  background: rgba(232, 65, 24, 0.15);
+  border: 1px solid rgba(232, 65, 24, 0.3);
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  color: #e84118;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+}
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+.projects {
+  background: #050505;
+  padding: 80px 5%;
+}
+
+.projects__table-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #222;
+}
+
+.projects__col-label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: #555;
+  font-weight: 600;
+}
+
+.project-row {
+  border-bottom: 1px solid #1a1a1a;
+  cursor: pointer;
+}
+
+.project-row__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  transition: all 0.2s;
+}
+
+.project-row__name {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #2a2a2a;
+  -webkit-text-stroke: 1px #444;
+  margin: 0;
+  letter-spacing: -1px;
+  transition: color 0.25s, -webkit-text-stroke 0.25s;
+  flex: 1;
+}
+
+.project-row__name--active {
+  color: #e84118;
+  -webkit-text-stroke: 0;
+}
+
+.project-row__sector {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.2s;
+  text-align: right;
+  min-width: 160px;
+}
+
+.project-row__sector--active {
+  color: #e84118;
+}
+
+/* Expandable detail */
+.project-row__detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.project-row__detail--open {
+  max-height: 200px;
+}
+
+.project-row__detail-inner {
+  padding: 16px 0 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.project-row__desc {
+  font-family: 'Barlow', sans-serif;
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 2;
+  min-width: 220px;
+}
+
+.project-row__meta {
+  flex: 1;
+  min-width: 180px;
+}
+
+.project-row__role {
+  font-family: 'Barlow', sans-serif;
+  color: #666;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.project-tag {
+  border: 1px solid #333;
+  border-radius: 50px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+.contact {
+  background: #0d0d0d;
+  padding: 80px 5%;
+  border-top: 1px solid #1a1a1a;
+}
+
+.contact__heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+
+.contact__heading span {
+  color: #e84118;
+}
+
+.contact__col-label {
+  color: #555;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.contact__value {
+  color: #d4cfc7;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact__value:hover {
+  color: #e84118;
+}
+
+.contact__social-link {
+  color: #e84118;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.contact__social-link:hover {
+  opacity: 0.7;
+}
+
+.contact__footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact__footer span {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  color: #444;
+}
